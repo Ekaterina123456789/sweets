@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cладость в радость</title>
+    <link rel="icon" type="image/x-icon"  href="{% static 'styles/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% if user.is_authenticated %}
+<div class="menu">
+    <div class="contacts">
+    <p>
+        http://vk.com/id260077149 <br>
+        тел.: +79031379999</p>
+</div>
+    <div class="wrap">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'styles/logo.png' %}" height="70px" alt="logo">
+            </a>
+        </div>
+        <ul>
+            <li class="logo"><a href="">Пользователь {{ user.username }}</a></li>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'add_work' %}">Добавить работу</a></li>
+            <li><a href="{% static 'styles/diploma.jpg' %}" target="_blank">Дипломы</a></li>
+            <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
+            <li><a href="{% url 'loginuser' %}">Войти</a></li>
+            <li>
+                <form action="{% url 'logoutuser' %}" method="post">
+                    {% csrf_token %}
+                    <button class="top">Выйти</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+{% else %}
+<div class="menu">
+    <div class="wrap">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'styles/logo.png' %}" height="70px" alt="logo">
+            </a>
+        </div>
+        <ul>
+            <li class="logo">
+                <a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
+            <li><a href="{% url 'loginuser' %}">Войти</a></li>
+        </ul>
+    </div>
+    <div class="contacts">
+        <p>
+            http://vk.com/id260077149 <br>
+            тел.: +79031379999</p>
+    </div>
+</div>
+{% endif %}
+<div class="content">
+    <div class="wrap">
+        <h4>{{ error }}</h4>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

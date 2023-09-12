@@ -1,0 +1,17 @@
+{% extends 'userpage/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Зефир, пряники и торты на заказ</h1>
+<h2 class="count">Работы {{ works.count }}</h2>
+<div class="block">
+    {% for work in works %}
+    <div class="element">
+        <h2 class="top">
+            <img src="{{ work.picture }}" alt="{{ work.title }}">
+            <a href="{% url 'work' work.id %}"><h3>{{ work.title }}</h3></a>
+            <a href="{% url 'work' work.id %}">{{ work.price }} руб.</a>
+        </h2>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

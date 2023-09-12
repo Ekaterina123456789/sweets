@@ -1,0 +1,15 @@
+{% extends 'userpage/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Зефир, пряники и торты на заказ</h1>
+<h2 class="count">Работ: {{ works.count }}</h2>
+{% for work in works %}
+    <div class="element">
+        <h2 class="top">
+            <h3>{{ work.title }}</h3>
+            <img src="{{ work.picture }}" alt="{{ work.title }}">
+            <p>{{ work.description | safe }}</p>
+        </h2>
+    </div>
+{% endfor %}
+{% endblock %}

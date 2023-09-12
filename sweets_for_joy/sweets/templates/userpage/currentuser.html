@@ -1,0 +1,42 @@
+{% extends 'userpage/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Текущие акции и спецпредложения</h1>
+<div class="block">
+    <div class="element">
+        <img src="{% static 'promo/001.jpg' %}" alt="">
+    </div>
+    <div class="element">
+        <img src="{% static 'promo/003.jpg' %}" alt="">
+    </div>
+    <div class="element">
+        <img src="{% static 'promo/005.jpg' %}" alt="">
+    </div>
+</div>
+<div class="promo">
+    {% for work in promo %}
+        {% if work.important %}
+            <img src="{{ work.picture.url }}" alt="{{ work.title }}">
+            <b>{{ work.title }}</b>
+            <h4>{{ work.price }}</h4>
+        {% endif %}
+    {% endfor %}
+</div>
+<h2>Моя корзина:</h2>
+<ul>
+    {% for work in works %}
+    <li>
+        <div class="element">
+            <img src="{{ work.picture.url }}" alt="{{ work.title }}">
+            <a href="{% url 'vieworder' work.id %}">
+                <b>{{ work.title }}</b>
+            </a>
+            {% if work.price %}
+            - <b>{{ work.price }} рублей.</b>
+            {% endif %}
+        </div>
+    </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    font-family: 'Courier New', Courier, monospace, Verdana, Tahoma, sans-serif, sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    background-color: #FFF;
+}
+.wrap{
+    max-width: 1200px;
+    background-color: rgb(251, 185, 220)
+    padding: 20px;
+    box-sizing: border-box;
+}
+.contacts{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+.block{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    
+}
+.element{
+    background-color: #d6bbf0;;
+    flex-basis: 360px;
+    border: 2px solid #888888;
+    margin: 20px 0;
+    text-align: center;
+    padding-top: 20px;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+
+.text{
+    width: 360px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.block img{
+    max-width: 360px;
+}
+.content h1{
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 36px;
+}
+.img + h2, .text h2{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 30px;
+}
+.img{
+    text-align: center;
+    margin-bottom: 60px;
+    
+}
+.img img{
+    border: 6px solid #FFF;
+    
+}
+.top{
+    background: rgb(251, 185, 220);
+    margin: 0;
+}
+.top a{
+    color: #FFF;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+.blog_text, .count{
+    padding: 20px;
+    box-sizing: border-box;
+}
+.detail{
+    background: white;
+    padding: 20px, 20px, 60px;
+    box-sizing: border-box;
+}
+.menu{
+    background: lightyellow;
+    padding: 10px;
+    border-bottom: 6px solid #FFF;
+}
+.menu .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+.menu li{
+    margin-left: 40px;
+}
+.menu a{
+    color: #663366;
+    font-weight: bold;
+    text-decoration: none;
+}

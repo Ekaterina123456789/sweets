@@ -1,0 +1,13 @@
+{% extends 'userpage/base.html' %}
+
+{% block content %}
+<div class="block">
+    <div class="single">
+        <img class="singleWork" src="{{ work.image.url }}" alt="photo"/>
+        <h3>{{ work.title }}</h3>
+        <h4>{{ work.description }}</h4>
+    </div>
+
+</div>
+
+{% endblock %}
